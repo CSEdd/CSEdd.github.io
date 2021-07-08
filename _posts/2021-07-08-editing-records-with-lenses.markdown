@@ -4,7 +4,7 @@ title:  "Editing records with lenses"
 date:   2021-07-08 09:02:02 +0100
 categories: jekyll update
 ---
-I'm currently working on a [Dominion](https://github.com/CSEdd/domin8) simulator in Haskell which requires a few constantly changing records to accurately represent the gameplay. While I first looked at using functions that returns updated records, I realised this would get complex as the records became more nested and the multiple functions per update complicated rather simple logic. 
+I'm currently working on a [Dominion](https://github.com/CSEdd/domin8) simulator in Haskell which requires a few constantly changing records to accurately represent the game-play. While I first looked at using functions that returns updated records, I realized this would get complex as the records became more nested and the multiple functions per update complicated rather simple logic. 
 
 {% highlight haskell %}
 data Card = Card {
@@ -45,7 +45,7 @@ data Person = Person {
 makeLenses ''Person
 {% endhighlight %}
 
-There's a little magic going on here. First we mark a record to be lens'd by adding `makeLenses ''<recordName>`. We then mark each field in that record to be lens'd by prepending them with underscores. After this we can get, set, and generall update complex records in a much simpler way (albeit with some pretty interesting syntax choices).
+There's a little magic going on here. First we mark a record to be lens'd by adding `makeLenses ''<recordName>`. We then mark each field in that record to be lens'd by prepending them with underscores. After this we can get, set, and general update complex records in a much simpler way (albeit with some pretty interesting syntax choices).
 
 {% highlight haskell %}
 -- View
@@ -58,6 +58,6 @@ person $ name .~ "CSEdd"
 person $ name %~ "Edd"
 {% endhighlight %}
 
-You can also use Lenses on other datatypes too. For example if you wanted to get the third characther of "Lenses" you could write `"Lenses" ^? ix 3`. Told you the syntax was interesting right? 
+You can also use Lenses on other datatypes too. For example if you wanted to get the third character of "Lenses" you could write `"Lenses" ^? ix 3`. Told you the syntax was interesting right? 
 
 You can read more about Lens [here](https://hackage.haskell.org/package/lens-5.0.1/docs/Control-Lens-Fold.html) or Edward Kmetts FAQ [here](https://github.com/ekmett/lens/wiki/FAQ).

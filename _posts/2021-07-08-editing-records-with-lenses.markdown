@@ -4,7 +4,7 @@ title:  "Editing records with lenses"
 date:   2021-07-08 09:02:02 +0100
 categories: jekyll update
 ---
-I'm currently working on a [Dominion](https://github.com/CSEdd/domin8) simulator in Haskell which requires a few constantly changing records to accurately represent. While I first looked at using functions that returns an updated record, I realised this would get complex as the records became more nested and complicate rather simple logic. 
+I'm currently working on a [Dominion](https://github.com/CSEdd/domin8) simulator in Haskell which requires a few constantly changing records to accurately represent the gameplay. While I first looked at using functions that returns updated records, I realised this would get complex as the records became more nested and the multiple functions per update complicated rather simple logic. 
 
 {% highlight haskell %}
 data Card = Card {
